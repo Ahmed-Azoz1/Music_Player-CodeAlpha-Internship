@@ -28,3 +28,21 @@ const loadMusic = index => {
     musicImg.src = music.img;
     mainAudio.src = music.src;
 };
+
+// Play or pause the music
+const playMusic = () => {
+    isPlaying = true;
+    playPauseBtn.querySelector("i").textContent = "pause";
+    mainAudio.play();
+    nowPlayingSpan.innerText = 'Now Playing';
+};
+
+const pauseMusic = () => {
+    isPlaying = false;
+    playPauseBtn.querySelector("i").textContent = "play_arrow";
+    mainAudio.pause();
+    nowPlayingSpan.innerText = 'Pause';
+};
+
+// Toggle play/pause on button click
+playPauseBtn.addEventListener("click", () => isPlaying ? pauseMusic() : playMusic());
