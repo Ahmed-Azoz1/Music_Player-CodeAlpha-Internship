@@ -155,3 +155,9 @@ const updateVolumeIcon = volume => {
         volumeIcon.textContent = "volume_up";
     }
 };
+
+// Update volume slider background
+const updateVolumeSliderBackground = volume => {
+    const volumeValue = volume * 100;
+    volumeSlider.style.background = `linear-gradient(to right, black ${volumeValue}%, var(--lightbshadow) ${volumeValue}%)`;
+};
