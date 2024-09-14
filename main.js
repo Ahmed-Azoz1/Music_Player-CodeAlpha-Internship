@@ -64,3 +64,45 @@ const prevMusic = () => {
 // Next and previous buttons functionality
 nextBtn.addEventListener("click", nextMusic);
 prevBtn.addEventListener("click", prevMusic);
+
+// Toggle repeat mode on button click
+repeatBtn.addEventListener("click", () => {
+    const text = repeatBtn.textContent;
+    switch (text) {
+        case "repeat":
+            repeatBtn.textContent = "repeat_one";
+            repeatBtn.setAttribute("title", "Song looped");
+            break;
+        case "repeat_one":
+            repeatBtn.textContent = "shuffle";
+            repeatBtn.setAttribute("title", "Playback shuffled");
+            break;
+        case "shuffle":
+            repeatBtn.textContent = "repeat";
+            repeatBtn.setAttribute("title", "Playlist looped");
+            break;
+    }
+});
+
+// Handle music end based on repeat mode
+mainAudio.addEventListener("ended", () => {
+    const text = repeatBtn.textContent;
+    switch (text) {
+        case "repeat":
+            nextMusic();
+            break;
+        case "repeat_one":
+            mainAudio.currentTime = 0;
+            playMusic();
+            break;
+        case "shuffle":
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * allMusic.length);
+            } while (musicIndex === randomIndex);
+            musicIndex = randomIndex;
+            loadMusic(musicIndex);
+            playMusic();
+            break;
+    }
+});
