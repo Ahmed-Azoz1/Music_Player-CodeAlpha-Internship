@@ -137,3 +137,10 @@ const formatTime = time => {
     const seconds = Math.floor(time % 60).toString().padStart(2, '0');
     return `${minutes}:${seconds}`;
 };
+
+// Update volume and icon
+volumeSlider.addEventListener("input", () => {
+    mainAudio.volume = volumeSlider.value;
+    updateVolumeIcon(volumeSlider.value);
+    updateVolumeSliderBackground(volumeSlider.value);
+});
