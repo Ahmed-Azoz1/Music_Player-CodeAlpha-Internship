@@ -78,3 +78,64 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+.song-details {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.song-details p {
+  color: var(--lightblack);
+}
+
+.song-details .name {
+  font-size: 21px;
+  color: #009bff;
+}
+
+.song-details .artist {
+  font-size: 16px;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+
+.progress-area {
+  height: 6px;
+  width: 100%;
+  border-radius: 50px;
+  background: #f0f0f0;
+  cursor: pointer;
+} 
+
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  background: linear-gradient(to right, var(--bottom-bg), var(--top-bg));
+  position: relative;
+}
+
+
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  top: 50%;
+  right: -5px;
+  background: inherit;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.progress-area:hover .progress-bar::before {
+  opacity: 1;
+}
+
+.song-timer span {
+  font-size: 15px;
+  color: var(--lightblack);
+}
