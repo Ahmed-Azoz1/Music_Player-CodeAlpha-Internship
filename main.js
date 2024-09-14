@@ -144,3 +144,14 @@ volumeSlider.addEventListener("input", () => {
     updateVolumeIcon(volumeSlider.value);
     updateVolumeSliderBackground(volumeSlider.value);
 });
+
+// Change volume icon based on volume level
+const updateVolumeIcon = volume => {
+    if (volume == 0) {
+        volumeIcon.textContent = "volume_off";
+    } else if (volume < 0.5) {
+        volumeIcon.textContent = "volume_down";
+    } else {
+        volumeIcon.textContent = "volume_up";
+    }
+};
