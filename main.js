@@ -46,3 +46,21 @@ const pauseMusic = () => {
 
 // Toggle play/pause on button click
 playPauseBtn.addEventListener("click", () => isPlaying ? pauseMusic() : playMusic());
+
+// Play next song
+const nextMusic = () => {
+    musicIndex = (musicIndex + 1) % allMusic.length;
+    loadMusic(musicIndex);
+    playMusic();
+};
+
+// Play previous song
+const prevMusic = () => {
+    musicIndex = (musicIndex - 1 + allMusic.length) % allMusic.length;
+    loadMusic(musicIndex);
+    playMusic();
+};
+
+// Next and previous buttons functionality
+nextBtn.addEventListener("click", nextMusic);
+prevBtn.addEventListener("click", prevMusic);
