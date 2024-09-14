@@ -192,3 +192,37 @@ body {
 .volume-control i:hover {
   color: var(--main-color);
 }
+
+#volume-slider {
+  width: 100px;
+  margin-left: 10px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none; 
+  background: linear-gradient(to right, black 0%, var(--lightbshadow) 0%);
+  border-radius: 50px; 
+  height: 6px; 
+}
+
+#volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--lightblack); 
+  cursor: pointer;
+  box-shadow: 0 4px 8px var(--lightbshadow);
+}
+
+#volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--lightblack); 
+  cursor: pointer;
+  box-shadow: 0 4px 8px var(--lightbshadow);
+}
+
+#volume-slider::-webkit-slider-thumb:hover {
+  background: var(--bottom-bg); 
+} 
