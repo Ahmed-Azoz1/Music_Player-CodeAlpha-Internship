@@ -106,3 +106,15 @@ mainAudio.addEventListener("ended", () => {
             break;
     }
 });
+
+// Update progress bar and time display
+mainAudio.addEventListener("timeupdate", () => {
+    const { currentTime, duration } = mainAudio;
+    progressBar.style.width = `${(currentTime / duration) * 100}%`;
+
+    const musicCurrentTime = container.querySelector(".current-time"),
+            musicDuration = container.querySelector(".max-duration");
+
+    musicCurrentTime.textContent = formatTime(currentTime);
+    musicDuration.textContent = formatTime(duration);
+});
