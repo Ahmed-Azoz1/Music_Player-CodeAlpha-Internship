@@ -161,3 +161,19 @@ const updateVolumeSliderBackground = volume => {
     const volumeValue = volume * 100;
     volumeSlider.style.background = `linear-gradient(to right, black ${volumeValue}%, var(--lightbshadow) ${volumeValue}%)`;
 };
+
+// Mute/unmute on volume icon click
+volumeIcon.addEventListener("click", () => {
+    if (mainAudio.volume > 0) {
+        lastVolume = mainAudio.volume;
+        mainAudio.volume = 0;
+        volumeIcon.textContent = "volume_off";
+        volumeSlider.value = 0;
+        updateVolumeSliderBackground(0);
+    } else {
+        mainAudio.volume = lastVolume;
+        updateVolumeIcon(lastVolume);
+        volumeSlider.value = lastVolume;
+        updateVolumeSliderBackground(lastVolume);
+    }
+});
