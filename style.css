@@ -139,3 +139,56 @@ body {
   font-size: 15px;
   color: var(--lightblack);
 }
+
+.controls {
+  margin: 40px 0 5px;
+}
+
+.controls i {
+  font-size: 28px;
+  color: var(--bottom-bg);
+  transition: color 0.3s ease;
+}
+
+.controls i:hover:not(.play-pause i) {
+  color: var(--main-color);
+}
+
+.play-pause {
+  height: 54px;
+  width: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--bottom-bg);
+  transition: background 0.3s ease;
+}
+
+.play-pause:hover {
+  background: var(--main-color);
+}
+
+.play-pause i {
+  color: var(--white);
+  font-size: 35px;
+  text-align: center;
+}
+
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.volume-control i {
+  font-size: 24px;
+  color: var(--lightblack); 
+  transition: color 0.3s ease; 
+}
+
+.volume-control i:hover {
+  color: var(--main-color);
+}
