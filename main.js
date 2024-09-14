@@ -118,3 +118,14 @@ mainAudio.addEventListener("timeupdate", () => {
     musicCurrentTime.textContent = formatTime(currentTime);
     musicDuration.textContent = formatTime(duration);
 });
+
+// Seek through the song by clicking on the progress bar
+progressArea.addEventListener("click", e => {
+    const progressWidth = progressArea.clientWidth;
+    const clickedOffsetX = e.offsetX;
+    if (clickedOffsetX >= 0 && clickedOffsetX <= progressWidth) {
+        const songDuration = mainAudio.duration;
+        mainAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
+        playMusic();
+    }
+});
