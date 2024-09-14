@@ -129,3 +129,11 @@ progressArea.addEventListener("click", e => {
         playMusic();
     }
 });
+
+// Format time as MM:SS
+const formatTime = time => {
+    if (isNaN(time) || time < 0) return "00:00";
+    const minutes = Math.floor(time / 60).toString().padStart(2, '0');
+    const seconds = Math.floor(time % 60).toString().padStart(2, '0');
+    return `${minutes}:${seconds}`;
+};
