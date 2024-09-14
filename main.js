@@ -1,3 +1,5 @@
+// =====================================================   TASK 4 CodeAlpha   =====================================================
+
 // Select DOM elements
 const container = document.querySelector(".container"),
     musicImg = container.querySelector(".img-area img"),
@@ -177,3 +179,5 @@ volumeIcon.addEventListener("click", () => {
         updateVolumeSliderBackground(lastVolume);
     }
 });
+
+// =====================================================  END TASK 4 CodeAlpha   =====================================================
