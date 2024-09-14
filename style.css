@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --top-bg: #32373c;
+  --bottom-bg: #18191c;
+  --lightblack: #515c6f;
+  --white: #ffffff;
+  --lightbshadow: rgba(0, 0, 0, 0.15);
+  --main-color: #009bff;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to top, var(--bottom-bg), var(--top-bg));
+  padding: 0 15px;
+}
+
+.container {
+  width: 380px;
+  padding: 25px 30px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 15px;
+  background: var(--white);
+}
+
+.container i {
+  cursor: pointer;
+}
